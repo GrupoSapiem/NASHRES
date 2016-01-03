@@ -1,0 +1,92 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<!-- Evitar zoom on focus-->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+	<link rel="shortcut icon"  type="image/x-icon" href="favicon.ico"  />
+	<title>NASH Resolution Score</title>
+	<script type="text/javascript" src="nashrescalc.js"></script>
+	<style type="text/css" media="all">
+		p {
+			font: bold 11pt Tahoma, Verdana;
+			margin: 5px;
+			text-align: justify;
+			padding: 2px;
+		}
+    </style>
+</head>
+
+<body background="bgd.jpg" style="font: Tahoma, Verdana;">
+<br>
+<p style="text-align:center; color:#069; font-weight:bold; font-size:14pt; text-shadow: 2px 2px 3px #fff;">NASHRES<br>Resolution Score</p>
+<p style="text-align:center;"><img src="lindiv.png" width="98%" height="1" alt="" /></p>
+<form action="#">
+<table width="300" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td width="250"><p style="text-align:left;">Porciento de p&eacute;rdida de peso</p></td>
+	<td width="50">
+		<input style="font-size:10.5pt;" name="PPP" id="PPP" size="4" maxlength="4" onkeyup="NASHRES('PPP');" type="text">
+	</td>
+</tr>
+<tr>
+	<td width="250"><p>&nbsp;&nbsp;&nbsp; Calcular:</p></td>
+</tr>
+<tr>
+
+<td width="150"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Peso inicial</p></td>
+<td>
+<input style="font-size:10.5pt;" name="PI" id="PI" size="5" maxlength="5" onkeyup="CalcPPP('PI');" type="text"></td>
+</tr>
+<tr>
+<td width="250"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Peso actual</p></td>
+<td>
+<input style="font-size:10.5pt;" name="PA" id="PA" size="5" maxlength="5" onkeyup="CalcPPP('PA');" type="text"></td>
+</tr>
+<tr>
+	</tr>
+<tr>
+<td width="250"><p style="text-align:left;">Edad en a&nacute;os cumplidos</p></td>
+	<td width="50">
+		<input style="font-size:10.5pt;" name="Edad" id="Edad" size="3" maxlength="3" onkeyup="NASHRES('Edad');" type="text">
+	</td>
+</tr>
+<tr>
+<td width="250"><p>NAS &#8805; 5 </p></td>
+<td>
+<select style="font-size:10.5pt;" size="1" name="NAS" id="NAS" onchange="NASHRES('');">
+	<option selected="selected" value="1">Si</option>
+	<option value="0">No</option>
+	</select>
+</td>
+
+</tr>
+<tr>
+<td width="250"><p>Diabetes tipo 2</p></td>
+<td>
+	<select style="font-size:10.5pt;" size="1" name="DT2" id="DT2" onchange="NASHRES('');">
+		<option selected="selected" value="0">Ausente</option>
+		<option value="1">Presente</option>
+	</select>
+</td>
+</tr>
+<tr>
+
+<td width="250"><p style="text-align:left;">ALT al final del tratamiento</p></td>
+<td>
+<select style="font-size:10.5pt;" size="1" name="ALT" id="ALT" onchange="NASHRES('');">
+	<option selected="selected" value="1">Normal</option>
+	<option value="0">Elevada</option></select>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="NASHRESResult" style="text-align:center; font-size:16pt; font-weight:bold; color:#fff; text-shadow: 2px 2px 3px #000000;">NASHRES: &minus;</p>
+<p id="ANAResult" style="text-align:center; font-size:12pt; font-weight:bold; color:#fff; text-shadow: 2px 2px 3px #000000;"></p>
+
+<p style="text-align:center;"><img src="lindiv.png" width="98%" height="1" alt="" /></p>
+<p style="text-align:center;"><input name="B1" value="Reiniciar" onclick="RstNASHRES();" type="reset"></p>
+</form>
+</body>
+</html>
